@@ -1,0 +1,4 @@
+import { sql } from "drizzle-orm";
+import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+export const products = sqliteTable("products", { id: integer("id").primaryKey({ autoIncrement: true }), name: text("name").notNull(), sku: text("sku").notNull().unique(), stock: integer("stock").notNull().default(0), warningStock: integer("warning_stock").notNull().default(10), totalSold: integer("total_sold").notNull().default(0), createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`) });
+export const inventoryRecords = sqliteTable("inventory_records", { id: integer("id").primaryKey({ autoIncrement: true }), productId: integer("product_id").notNull().references(() => products.id, { onDelete: "cascade" }), type: text("type", { enum: ["in", "out"] }).notNull(), quantity: integer("quantity").notNull(), recordDate: text("record_date").notNull(), createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`) });
