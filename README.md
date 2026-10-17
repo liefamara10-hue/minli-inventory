@@ -14,6 +14,24 @@
 - 采销记录：查看最近 100 条完整的进货与出货记录。
 - PDF 盘点清单：网站内一键导出适合手机查看和仓库月度盘点的库存 PDF。
 
+## 界面预览
+
+### 功能入口
+
+![库存管理功能入口](docs/screenshots/home.png)
+
+### 产品清单
+
+![产品清单](docs/screenshots/products.png)
+
+### 每日采销维护与记录
+
+![每日采销维护与记录](docs/screenshots/records.png)
+
+### 库存预警与销量排名
+
+![库存预警与销量排名](docs/screenshots/insights.png)
+
 ## 技术栈
 
 - React / Vinext
