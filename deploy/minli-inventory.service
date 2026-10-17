@@ -1,0 +1,15 @@
+[Unit]
+Description=Minli Inventory Management
+After=network.target
+
+[Service]
+Type=simple
+User=admin
+WorkingDirectory=/opt/minli-inventory
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/npm start -- --port 3105
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
